@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Iso&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+
+}
+
+:root {
+  --main-color: #272829;
+  --second-color: #61677A;
+  --third-color: #D8D9DA;
+}
+body {
+    background-image: linear-gradient(var(--second-color),var(--third-color));
+  }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100vh;
+  margin: auto;
+}
+
+.box {
+  background-color: gray;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+.box span {
+  background-color: var(--main-color);
+  text-align: center;
+  color: white;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Permanent Marker", cursive;
+  font-family: "Rubik Iso", cursive;
+  font-size: 35px;
+}
+.box span:hover {
+  background-color: var(--second-color);
+}
+
+.playAgain {
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
+.playAgain:hover {
+    background-color: var(--second-color);
+}
+
+
+/* glitch effect */
+
+
+.glitch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+ }
+ 
+ .glitch {
+    position: relative;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: 5px;
+    z-index: 1;
+ }
+ 
+ .glitch:before,
+ .glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+ }
+ 
+ .glitch:before {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #0ff;
+    z-index: -1;
+ }
+ 
+ .glitch:after {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #ff00ff;
+    z-index: -2;
+ }
+ 
+ @keyframes glitch-color {
+    0% {
+       transform: translate(0);
+    }
+ 
+    20% {
+       transform: translate(-3px, 3px);
+    }
+ 
+    40% {
+       transform: translate(-3px, -3px);
+    }
+ 
+    60% {
+       transform: translate(3px, 3px);
+    }
+ 
+    80% {
+       transform: translate(3px, -3px);
+    }
+ 
+    to {
+       transform: translate(0);
+    }
+ }
